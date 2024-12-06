@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -20,13 +21,13 @@ include_once 'common/header.php';
       <div class="container">
         <div class="row">
           <div class="col-xl-4">
-            <h1 data-aos="fade-up">Focus On What Matters</h1>
+            <h1 data-aos="fade-up">Szélerőművek</h1>
             <blockquote data-aos="fade-up" data-aos-delay="100">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis cum recusandae eum laboriosam voluptatem repudiandae odio, vel exercitationem officiis provident minima. </p>
+              <p>A szélenergia jelenleg a világ leggyakrabban használt megújuló energiaforrása, megelőzve a vízenergiát és a napenergiát is. A szélerőmű pedig az az eszköz, mellyel a légmozgást elektromos árammá lehet alakítani. </p>
             </blockquote>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="#about" class="btn-get-started">Kezdjük!</a>
+              <a href="https://www.youtube.com/watch?v=QkGA2AAiYig" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Rövid videó</span></a>
             </div>
           </div>
         </div>
@@ -72,33 +73,29 @@ include_once 'common/header.php';
 
                 <div class="swiper-slide">
                   <div class="item">
-                    <h3 class="mb-3">Let's grow your business together</h3>
-                    <h4 class="mb-3">Optio reiciendis accusantium iusto architecto at quia minima maiores quidem, dolorum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ipsam perferendis asperiores explicabo vel tempore velit totam, natus nesciunt accusantium dicta quod quibusdam ipsum maiores nobis non, eum. Ullam reiciendis dignissimos laborum aut, magni voluptatem velit doloribus quas sapiente optio.</p>
+                    <h3 class="mb-3">A szélenergia végtelen lehetőségei</h3>
+                    <p>A fejlett világban a szélenergia a leggyorsabban bővülő villamosenergia-termelési technológia. Ehhez képest hazánkban nagyon alacsony a részaránya, és a döntéshozók oldalán sem látható szándék az elterjesztésére.</p>
                   </div>
                 </div><!-- End slide item -->
 
                 <div class="swiper-slide">
                   <div class="item">
-                    <h3 class="mb-3">Unde perspiciatis ut repellat dolorem</h3>
-                    <h4 class="mb-3">Amet cumque nam sed voluptas doloribus iusto. Dolorem eos aliquam quis.</h4>
-                    <p>Dolorem quia fuga consectetur voluptatem. Earum consequatur nulla maxime necessitatibus cum accusamus. Voluptatem dolorem ut numquam dolorum delectus autem veritatis facilis. Et ea ut repellat ea. Facere est dolores fugiat dolor.</p>
+                    <h3 class="mb-3">A szélenergia végtelen lehetőségei</h3>
+                    <p> Nap bolygónkat elérő energiájának nagyjából 1–4%-a alakul át szélenergiává, amely nemcsak időjárásunk alakításában játszik nagy szerepet, de szélturbinák segítségével elektromos áramot állíthatunk elő belőle.</p>
                   </div>
                 </div><!-- End slide item -->
 
                 <div class="swiper-slide">
                   <div class="item">
-                    <h3 class="mb-3">Aliquid non alias minus</h3>
-                    <h4 class="mb-3">Necessitatibus voluptatibus explicabo dolores a vitae voluptatum.</h4>
-                    <p>Neque voluptates aut. Soluta aut perspiciatis porro deserunt. Voluptate ut itaque velit. Aut consectetur voluptatem aspernatur sequi sit laborum. Voluptas enim dolorum fugiat aut.</p>
+                    <h3 class="mb-3">A szélenergia végtelen lehetőségei</h3>
+                    <p>A turbinák működésüket és felépítésüket tekintve viszonylag egyszerű, a klasszikus szélmalmokhoz hasonló szerkezetek. Általában három lapátjuk van, melyek a rotor tengelyéhez csatlakoznak, amely a lapátokat érő szél hatására forgásba jön. A gondolában elhelyezkedő generátor ezt a forgási energiát alakítja át villamos energiává.</p>
                   </div>
                 </div><!-- End slide item -->
 
                 <div class="swiper-slide">
                   <div class="item">
-                    <h3 class="mb-3">Necessitatibus suscipit non voluptatem quibusdam</h3>
-                    <h4 class="mb-3">Tempora quos est ut quia adipisci ut voluptas. Deleniti laborum soluta nihil est. Eum similique neque autem ut.</h4>
-                    <p>Ut rerum et autem vel. Et rerum molestiae aut sit vel incidunt sit at voluptatem. Saepe dolorem et sed voluptate impedit. Ad et qui sint at qui animi animi rerum.</p>
+                    <h3 class="mb-3">A szélenergia végtelen lehetőségei</h3>
+                    <p>Fenntarthatósági szempontból a szélerőműveknek több előnyös tulajdonságuk is van, ugyanis a szélenergiának nincs káros égésterméke, mint a fosszilis energiaforrásoknak. A szélerőművek az energiatermelés során egyáltalán nem bocsátanak ki szén-dioxidot, ezáltal pedig nem növelik az üvegházhatást. További előnyük, hogy felépítésük viszonylag egyszerű, és szinte bárhová telepíthetők.</p>
                   </div>
                 </div><!-- End slide item -->
 
@@ -121,8 +118,8 @@ include_once 'common/header.php';
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Érdekességek</h2>
+        <p>Tekintse meg őket</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -132,9 +129,9 @@ include_once 'common/header.php';
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
             <div>
-              <h4 class="title">Lorem Ipsum</h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Fenntarthatóság</h4>
+              <p class="description"> A szélerőművek az energiatermelés során egyáltalán nem bocsátanak ki szén-dioxidot.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -142,45 +139,45 @@ include_once 'common/header.php';
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" style="color: #15a04a;"></i></div>
             <div>
-              <h4 class="title">Dolor Sitema</h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Üzemeltetés</h4>
+              <p class="description">Elhasználódása után – 25–30 éves élettartama végén – alkatrészeinek egy része újrahasznosítható.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="icon flex-shrink-0"><i class="bi bi-bar-chart" style="color: #d90769;"></i></div>
             <div>
-              <h4 class="title">Sed ut perspiciatis</h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Rotorlapátok</h4>
+              <p class="description">Üveg- vagy szénszálas anyaguk nehezen újrahasznosítható, elégetésük viszont rendkívüli módon károsítja a környezetet.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="icon flex-shrink-0"><i class="bi bi-binoculars" style="color: #15bfbc;"></i></div>
             <div>
-              <h4 class="title">Magni Dolores</h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Telepítésük</h4>
+              <p class="description">További előnyük, hogy felépítésük viszonylag egyszerű, és szinte bárhová telepíthetők.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
             <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" style="color: #f5cf13;"></i></div>
             <div>
-              <h4 class="title">Nemo Enim</h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Turbinák</h4>
+              <p class="description">A turbinák működésüket és felépítésüket tekintve viszonylag egyszerű, a klasszikus szélmalmokhoz hasonló szerkezetek.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
             <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" style="color: #1335f5;"></i></div>
             <div>
-              <h4 class="title">Eiusmod Tempor</h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">Örvényleválás</h4>
+              <p class="description">Ezekre a problémákra a lapát nélküli szélerőművek jelentenek megoldást, melyek ötlete a Kármán Tódor fizikus által leírt jelenségen, az örvényleváláson alapul.</p>
+              <a href="#" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -199,9 +196,9 @@ include_once 'common/header.php';
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-10">
             <div class="text-center">
-              <h3>Call To Action</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="cta-btn" href="#">Call To Action</a>
+              <h3>Egy jobb világ felé</h3>
+              <p>Mivel a Nap mindig süt, a szél sosem fogy el. Tehát az sosem okoz gondot az emberiség számára, hogy nem fúj többé a szél – problémát csak az jelenthet, ha túl naggyá válik az elektromos áram iránti igény, és ezt a szélerőművek nem képesek kiszolgálni.</p>
+              <a class="cta-btn" href="#">Kattits ide</a>
             </div>
           </div>
         </div>
@@ -215,64 +212,64 @@ include_once 'common/header.php';
       <div class="container">
         <div class="row">
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="mb-0">Powerful Features for</h3>
-            <h3>Your Business</h3>
+            <h3 class="mb-0">Még több érdekesség</h3>
+            
 
             <div class="row gy-4">
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-eye" style="color: #ff8b2c;"></i>
-                  <span>Easy Cart Features</span>
+                  <span>Legyünk zöldek</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-infinity" style="color: #5578ff;"></i>
-                  <span>Sit amet consectetur adipisicing</span>
+                  <span>A te szélerőműved</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-mortarboard" style="color: #e80368;"></i>
-                  <span>Ipsum Rerum Explicabo</span>
+                  <span>Csináld magad</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-star" style="color: #ffa76e;"></i>
-                  <span>Easy Cart Features</span>
+                  <span>Tudatosság</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
-                  <span>Easy Cart Features</span>
+                  <span>Egy zöldebb világ</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-camera-video" style="color: #4233ff;"></i>
-                  <span>Sit amet consectetur adipisicing</span>
+                  <span>Miért jó?</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
-                  <span>Ipsum Rerum Explicabo</span>
+                  <span>Neked is megéri</span>
                 </div>
               </div><!-- End Icon List Item-->
 
               <div class="col-md-6">
                 <div class="icon-list d-flex">
                   <i class="bi bi-activity" style="color: #ff5828;"></i>
-                  <span>Easy Cart Features</span>
+                  <span>Figyelj másokra</span>
                 </div>
               </div><!-- End Icon List Item-->
             </div>
@@ -290,9 +287,9 @@ include_once 'common/header.php';
         <div class="container">
           <div class="row">
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <h4>Labore Sdio Lidui<br>Bonde Naruto</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nostrum molestias doloremque quae delectus odit minima corrupti blanditiis quo animi!</p>
-              <a href="#about" class="btn-get-started">Get Started</a>
+              <h4>A szélerőmű előnyei</h4>
+              <p>Míg a fosszilis energiaforrásokat teljes mértékben mi kontrolláljuk, addig a megújuló energiaforrások tőlünk függetlenül működnek. Ez azt jelenti, hogy a napelemekhez hasonlóan a szélerőművek is csak akkor tudnak nagy hatékonysággal működni, amikor kedvezőek a körülmények, tehát szeles az időjárás.</p>
+              <a href="#about" class="btn-get-started">Kezdjük</a>
             </div>
           </div>
         </div>
@@ -305,7 +302,7 @@ include_once 'common/header.php';
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Recent Blog Posts</h2>
+        <h2>További cikkek a témában</h2>
 
       </div><!-- End Section Title -->
 
@@ -317,12 +314,12 @@ include_once 'common/header.php';
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
+                <span class="post-date">December 12</span>
+                <span class="post-author"> / Horváth József</span>
               </div>
-              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi qui magni est...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <h3 class="post-title">Az Unióban</h3>
+              <p>Magyarország próbál felzárkózni a nyugati országokhoz, de....</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -330,12 +327,12 @@ include_once 'common/header.php';
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
+                <span class="post-date">Szeptember 05</span>
+                <span class="post-author"> / Szabó Imre</span>
               </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <h3 class="post-title">Miért pont a szélenergia?</h3>
+              <p>Az egyik legfontosabb energiatermelő eszköz a szélerőmű, sok előnye van – de akadnak azért hátrányai is....</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -343,12 +340,12 @@ include_once 'common/header.php';
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
+                <span class="post-date">Július 27</span>
+                <span class="post-author"> / Orosz Liza</span>
               </div>
-              <h3 class="post-title">Quia assumenda est et veritati</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <h3 class="post-title">Kell nekünk a szélerőmű?!?</h3>
+              <p>Míg a fosszilis energiaforrásokat teljes mértékben mi kontrolláljuk, addig a megújuló energiaforrások tőlünk függetlenül működnek...</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -356,12 +353,12 @@ include_once 'common/header.php';
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt=""></div>
               <div class="meta">
-                <span class="post-date">Tue, Sep 16</span>
-                <span class="post-author"> / Mario Douglas</span>
+                <span class="post-date">Október 16</span>
+                <span class="post-author"> / Kis Márió</span>
               </div>
-              <h3 class="post-title">Pariatur quia facilis similique deleniti</h3>
-              <p>Et consequatur eveniet nam voluptas commodi cumque ea est ex. Aut quis omnis sint ipsum earum quia eligendi...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <h3 class="post-title">Több szélerőművet</h3>
+              <p>A szélerőművek felépítése viszonylag egyszerű, és szinte bárhova telepíthetők, ahol effektív lehet a szélenergia hasznosítása....</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Olvass tovább</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
