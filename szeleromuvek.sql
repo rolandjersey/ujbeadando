@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 05, 2024 at 08:11 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2024. Dec 07. 17:38
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `szeleromuvek`
+-- Adatbázis: `szeleromuvek`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `helyszin`
+-- Tábla szerkezet ehhez a táblához `helyszin`
 --
 
 CREATE TABLE `helyszin` (
@@ -34,7 +34,7 @@ CREATE TABLE `helyszin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `helyszin`
+-- A tábla adatainak kiíratása `helyszin`
 --
 
 INSERT INTO `helyszin` (`id`, `nev`, `megyeid`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `helyszin` (`id`, `nev`, `megyeid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kapcsolat`
+-- Tábla szerkezet ehhez a táblához `kapcsolat`
 --
 
 CREATE TABLE `kapcsolat` (
@@ -86,7 +86,7 @@ CREATE TABLE `kapcsolat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `kapcsolat`
+-- A tábla adatainak kiíratása `kapcsolat`
 --
 
 INSERT INTO `kapcsolat` (`id`, `nev`, `email`, `targy`, `uzenet`, `datum`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `kapcsolat` (`id`, `nev`, `email`, `targy`, `uzenet`, `datum`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `megye`
+-- Tábla szerkezet ehhez a táblához `megye`
 --
 
 CREATE TABLE `megye` (
@@ -110,7 +110,7 @@ CREATE TABLE `megye` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `megye`
+-- A tábla adatainak kiíratása `megye`
 --
 
 INSERT INTO `megye` (`id`, `nev`, `regio`) VALUES
@@ -138,7 +138,161 @@ INSERT INTO `megye` (`id`, `nev`, `regio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `torony`
+-- Tábla szerkezet ehhez a táblához `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(25) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `menu_id` int(25) NOT NULL,
+  `url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `menu`
+--
+
+INSERT INTO `menu` (`id`, `name`, `menu_id`, `url`) VALUES
+(1, 'Főoldal', 0, 'index.php'),
+(2, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(3, 'SOAP-kliens', 0, 'soapKliens.php'),
+(4, 'SOAP-MNB', 0, 'soapMnb.php'),
+(5, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(7, 'Restful-kliens', 0, 'restfulKliens.php'),
+(8, 'PDF menü', 0, 'pdfMenu.php'),
+(9, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact'),
+(0, 'Főoldal', 0, 'index.php'),
+(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
+(0, 'SOAP-kliens', 0, 'soapKliens.php'),
+(0, 'SOAP-MNB', 0, 'soapMnb.php'),
+(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
+(0, 'Restful-kliens', 0, 'restfulKliens.php'),
+(0, 'PDF menü', 0, 'pdfMenu.php'),
+(0, 'Elérhetőségek', 0, 'footer.php#contact');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `torony`
 --
 
 CREATE TABLE `torony` (
@@ -150,7 +304,7 @@ CREATE TABLE `torony` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `torony`
+-- A tábla adatainak kiíratása `torony`
 --
 
 INSERT INTO `torony` (`id`, `darab`, `teljesitmeny`, `kezdev`, `helyszinid`) VALUES
@@ -200,47 +354,47 @@ INSERT INTO `torony` (`id`, `darab`, `teljesitmeny`, `kezdev`, `helyszinid`) VAL
 (44, 1, 2000, 2010, 38);
 
 --
--- Indexes for dumped tables
+-- Indexek a kiírt táblákhoz
 --
 
 --
--- Indexes for table `helyszin`
+-- A tábla indexei `helyszin`
 --
 ALTER TABLE `helyszin`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_megyeid` (`megyeid`);
 
 --
--- Indexes for table `kapcsolat`
+-- A tábla indexei `kapcsolat`
 --
 ALTER TABLE `kapcsolat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `megye`
+-- A tábla indexei `megye`
 --
 ALTER TABLE `megye`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `torony`
+-- A tábla indexei `torony`
 --
 ALTER TABLE `torony`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_helyszinid` (`helyszinid`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- A kiírt táblák AUTO_INCREMENT értéke
 --
 
 --
--- AUTO_INCREMENT for table `kapcsolat`
+-- AUTO_INCREMENT a táblához `kapcsolat`
 --
 ALTER TABLE `kapcsolat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `torony`
+-- AUTO_INCREMENT a táblához `torony`
 --
 ALTER TABLE `torony`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
