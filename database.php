@@ -1,6 +1,6 @@
 <?php
 // Adatbázis kapcsolat adatai
-$servername = "localhost:3307";
+$servername = "localhost:3306";
 $username = "root";
 $password = ""; // Állítsd be a jelszót
 $dbname = "szeleromuvek";
