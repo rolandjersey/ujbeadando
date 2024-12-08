@@ -1,41 +1,64 @@
+<?php
+session_start(); // Session indítása a jogosultság ellenőrzéshez
+include_once 'database.php'; // Adatbázis kapcsolat
+
+// Menüpontok definiálása
+$menu_items = [
+    ['name' => 'Főoldal', 'url' => 'index.php'],
+    ['name' => 'SOAP-szerver', 'url' => 'soapSzerver.php'],
+    ['name' => 'SOAP-kliens', 'url' => 'soapKliens.php'],
+    ['name' => 'SOAP-MNB', 'url' => 'soapMnb.php'],
+    ['name' => 'Restful-szerver', 'url' => 'restfulSzerver.php'],
+    ['name' => 'Restful-kliens', 'url' => 'restfulKliens.php'],
+    ['name' => 'PDF menü', 'url' => 'pdfMenu.php'],
+    ['name' => 'Elérhetőségek', 'url' => 'footer.php#contact'],
+];
+
+// Menüpontok frissítése az adatbázisban
+foreach ($menu_items as $item) {
+    $query = "INSERT INTO menu (name, url) 
+              VALUES (?, ?) 
+              ON DUPLICATE KEY UPDATE name = VALUES(name), url = VALUES(url)";
+    $stmt = $conn->prepare($query);
+
+    if ($stmt) {
+        $stmt->bind_param("ss", $item['name'], $item['url']);
+        $stmt->execute();
+        $stmt->close();
+    } else {
+        die("SQL hiba: " . $conn->error);
+    }
+}
+?>
+
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Szélerőművek</h1>
-      </a>
+        <a href="index.php" class="logo d-flex align-items-center">
+            <h1 class="sitename">Szélerőművek</h1>
+        </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Főoldal<br></a></li>
-          <li><a href="about.html">Rólunk</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Képek</a></li>
-          <li><a href="team.html">Csapat</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Több</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+        <nav id="navmenu" class="navmenu">
+            <ul class="navbar-nav ml-auto">
+                <?php
+                // Az adatbázisban tárolt menüpontok betöltése
+                $query = "SELECT name, url FROM menu ORDER BY id ASC";
+                $result = $conn->query($query);
+
+                if ($result) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<li class="nav-item"><a class="nav-link" href="' . htmlspecialchars($row['url']) . '">' . htmlspecialchars($row['name']) . '</a></li>';
+                    }
+                }
+
+                // Admin menüpont dinamikus hozzáadása
+                if (isset($_SESSION['felh_ID']) && $_SESSION['jogosultsag'] === 'admin') {
+                    echo '<li class="nav-item"><a class="nav-link" href="adminProjections.php">Admin</a></li>';
+                }
+                ?>
             </ul>
-          </li>
-          <li><a href="contact.html">Elérhetőségek</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+            <button class="mobile-nav-toggle d-xl-none bi bi-list"></button>
+        </nav>
 
     </div>
-  </header>
+</header>
