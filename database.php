@@ -1,8 +1,8 @@
 <?php
 // Adatbázis kapcsolat adatai
 $servername = "localhost:3306";
-$username = "root";
-$password = ""; // Állítsd be a jelszót
+$username = 'root';
+$password = '';
 $dbname = "szeleromuvek";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

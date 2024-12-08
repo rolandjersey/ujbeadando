@@ -1,3 +1,8 @@
+<?
+include_once 'database.php';
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +21,7 @@ include_once 'common/header.php';
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/cards-4.jpg" alt="" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
@@ -43,7 +48,7 @@ include_once 'common/header.php';
         <div class="row g-0">
 
           <div class="col-xl-5 img-bg" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/why-us-bg.jpg" alt="">
+            <img src="assets/img/cards-3.jpg" alt="">
           </div>
 
           <div class="col-xl-7 slides position-relative" data-aos="fade-up" data-aos-delay="200">
@@ -190,7 +195,7 @@ include_once 'common/header.php';
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+      <img src="assets/img/contact-page-title-bg.jpg" alt="">
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">

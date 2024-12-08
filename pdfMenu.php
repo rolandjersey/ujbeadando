@@ -1,125 +1,147 @@
 <?php
-// A TCPDF 6. példájának a segítségével
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-try {
+// Adatbázis kapcsolat
+include_once 'database.php';
 
-	$dbh = new PDO('mysql:host=localhost;dbname=web2', 'root', '',
-				array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-	$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+// Megyék lekérdezése
+$megye_query = "SELECT * FROM megye";
+$megye_result = mysqli_query($conn, $megye_query);
 
-	$sql = "SELECT korlatozas.telepules, korlatozas.utszam, korlatozas.kezdet, korlatozas.veg, megnevezes.nev as megnevezes, mertek.nev as mérték, korlatozas.sebesseg, korlatozas.mettol, korlatozas.meddig FROM `korlatozas` 
-    INNER JOIN megnevezes on korlatozas.megnevid=megnevezes.id INNER JOIN mertek ON korlatozas.mertekid=mertek.id";     
-	$sth = $dbh->query($sql);
-	$rows = $sth->fetchAll(PDO::FETCH_ASSOC);
-}
-	catch (PDOException $e) {
-	echo "Hiba: ".$e->getMessage();
-}
+// Helyszínek lekérdezése
+$helyszin_query = "SELECT * FROM helyszin";
+$helyszin_result = mysqli_query($conn, $helyszin_query);
 
-// Include the main TCPDF library
-require_once('tcpdf/tcpdf.php');
+// Fejléc betöltése
+include_once 'common/header.php';
+?>
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-// create new PDF document
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+<style>
+    /* Globális háttér */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #17283b;
+        color: #ffffff;
+    }
 
-// set document information
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Web-programozás II');
-$pdf->SetTitle('FELHASZNÁLÓK');
-$pdf->SetSubject('Web-programozás II - 3. Labor - TCPDF');
-$pdf->SetKeywords('TCPDF, PDF, Web-programozás II, Labor3');
+    header {
+        background-color: #1b2f45;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #ffffff;
+        font-weight: bold;
+    }
 
-// set default header data
-$pdf->SetHeaderData("nje.png", 25, "FELHASZNÁLÓK LISTÁJA", "Web-programozás II\n3. Labor\n".date('Y.m.d',time()));
+    main {
+        padding: 20px;
+    }
 
-// set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+    form {
+        margin-bottom: 20px;
+    }
 
-// set default monospaced font
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
 
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+    .card {
+        background-color: #1b2f45;
+        color: white;
+        border: 1px solid #56b8e6;
+        border-radius: 10px;
+        width: 48%;
+        margin-bottom: 20px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+    .card h3 {
+        background-color: #17283b;
+        padding: 10px;
+        border-radius: 5px;
+        color: #ffffff;
+        text-align: center;
+    }
 
-// ---------------------------------------------------------
+    .card p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
 
-// set font
-$pdf->SetFont('helvetica', '', 10);
+    .btn-primary {
+        background-color: #56b8e6;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-// add a page
-$pdf->AddPage();
+    .btn-primary:hover {
+        background-color: #3a8fb2;
+    }
+</style>
 
-// create the HTML content
-$html  = '
-<html>
-	<head>
-		<style>
-			table {border-collapse: collapse;}
-			th {font-weight: border: 1px solid red; text-align: center;}
-			td {border: 1px solid blue;}
-		</style>
-	</head>
-	<body>
-		<h1 style="text-align: center; color: blue;">FELHASZNÁLÓK</h1>
-		<table>
-			<tr style="background-color: red; color: white;">
-			<th style="width: 5%;">&nbsp;<br>&nbsp;<br>&nbsp;</th>
-			<th style="width: 20%;">&nbsp;<br>CSALÁDI NÉV</th>
-			<th style="width: 20%;">&nbsp;<br>UTÓNÉV</th>
-			<th style="width: 20%;">&nbsp;<br>BEJELENTKEZÉS</th>
-			<th style="width: 35%;">&nbsp;<br>JELSZÓ</th>
-			</tr>
-';
-			$i=1;
-foreach($rows as $row) {
-	if($i)
-		$html .= '
-			<tr style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);">
-		';
-	else					
-		$html .= '
-			<tr style="background-color: rgb(0, 0, 255); color: rgb(255, 255, 255);">
-		';
-	$j=0;
-	foreach($row as $cell) {
-		if($j==0)
-			$html .= '
-				<td style="text-align: right; width: 5%;">
-			';
-		else if($j < 4)
-			$html .= '
-				<td style="text-align: left; width: 20%;">
-			';
-		else if($j == 4)
-			$html .= '
-				<td style="text-align: left; width: 35%;">
-			';
-		$html .= $cell;
-		$html .= '
-				</td>
-		';
-		$j++;
-	}
-	$html .= '
-			</tr>
-	';
-	$i = !$i;
-}
-$html .= '
-		</table>
-	<body>
-</html>';
+<main id="main" class="main">
+    <header>
+        Szélenergia - PDF Generálás
+    </header>
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">PDF Generálás - Szűrési Feltételek</h1>
+            <form method="POST" action="pdf_generator.php" class="mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="megye">Megye:</label>
+                        <input type="text" id="megye" name="megye" class="form-control" placeholder="Megye neve">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="helyszin">Helyszín:</label>
+                        <input type="text" id="helyszin" name="helyszin" class="form-control" placeholder="Helyszín neve">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="teljesitmeny">Minimális Teljesítmény:</label>
+                        <input type="number" id="teljesitmeny" name="teljesitmeny" class="form-control" placeholder="Teljesítmény (kW)">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn-primary">PDF Generálása</button>
+                    </div>
+                </div>
+            </form>
 
-$pdf->writeHTML($html, true, false, true, false, '');
+            <!-- Kártyák megjelenítése -->
+            <div class="card-container">
+                <?php while ($row = mysqli_fetch_assoc($megye_result)) : ?>
+                    <div class="card">
+                        <h3>Megye ID: <?php echo $row['id']; ?></h3>
+                        <p><strong>Megye:</strong> <?php echo $row['new'] ?? 'N/A'; ?></p>
+                        <p><strong>Regió:</strong> <?php echo $row['regio']; ?></p>
+                    </div>
+                <?php endwhile; ?>
 
-// ---------------------------------------------------------
+                <?php while ($row = mysqli_fetch_assoc($helyszin_result)) : ?>
+                    <div class="card">
+                        <h3>Helyszín ID: <?php echo $row['id']; ?></h3>
+                        <p><strong>Helyszín:</strong> <?php echo $row['new'] ?? 'N/A'; ?></p>
+                        <p><strong>Megye ID:</strong> <?php echo $row['megyeid']; ?></p>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        </div>
+    </section>
+</main>
 
-//Close and output PDF document
-$pdf->Output('labor3-1.pdf', 'I');
-
+<?php
+// Lábléc betöltése
+include_once 'common/footer.php';
+?>

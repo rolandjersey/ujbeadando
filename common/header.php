@@ -11,22 +11,34 @@ $menu_items = [
     ['name' => 'Restful-szerver', 'url' => 'restfulSzerver.php'],
     ['name' => 'Restful-kliens', 'url' => 'restfulKliens.php'],
     ['name' => 'PDF menü', 'url' => 'pdfMenu.php'],
-    ['name' => 'Elérhetőségek', 'url' => 'footer.php#contact'],
+    ['name' => 'Elérhetőségek', 'url' => '/common/footer.php#contact'],
 ];
 
-// Menüpontok frissítése az adatbázisban
-foreach ($menu_items as $item) {
-    $query = "INSERT INTO menu (name, url) 
-              VALUES (?, ?) 
-              ON DUPLICATE KEY UPDATE name = VALUES(name), url = VALUES(url)";
-    $stmt = $conn->prepare($query);
+$query = "SELECT * FROM menu WHERE name = ? AND url = ?";
+$stmt = $conn->prepare($query);
 
-    if ($stmt) {
-        $stmt->bind_param("ss", $item['name'], $item['url']);
-        $stmt->execute();
-        $stmt->close();
-    } else {
-        die("SQL hiba: " . $conn->error);
+
+if (!$stmt) {
+    die("SQL betöltési hiba: " . $conn->error);
+}
+
+$stmt->bind_param("ss", $item['name'], $item['url']);
+
+
+foreach ($menu_items as $item) {
+    $query = "SELECT * FROM menu WHERE name = ? AND url = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $item['name'], $item['url']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+
+    // Ha nem találja a menüpontot, akkor hozzáadja
+    if ($result->num_rows === 0) {
+        $insert_query = "INSERT INTO menu (name, url) VALUES (?, ?)";
+        $insert_stmt = $conn->prepare($insert_query);
+        $insert_stmt->bind_param("ss", $item['name'], $item['url']);
+        $insert_stmt->execute();
     }
 }
 ?>
@@ -34,30 +46,31 @@ foreach ($menu_items as $item) {
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.php" class="logo d-flex align-items-center">
+        <a href="index.html" class="logo d-flex align-items-center">
             <h1 class="sitename">Szélerőművek</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
-            <ul class="navbar-nav ml-auto">
+            <ul>
                 <?php
-                // Az adatbázisban tárolt menüpontok betöltése
+                // Menü betöltése
                 $query = "SELECT name, url FROM menu ORDER BY id ASC";
                 $result = $conn->query($query);
 
                 if ($result) {
                     while ($row = $result->fetch_assoc()) {
-                        echo '<li class="nav-item"><a class="nav-link" href="' . htmlspecialchars($row['url']) . '">' . htmlspecialchars($row['name']) . '</a></li>';
+                        echo '<li class="dropdown"><a href="' . htmlspecialchars($row['url']) . '">' . htmlspecialchars($row['name']) . '><i class="bi bi-chevron-down toggle-dropdown"></i></a></li>';
                     }
                 }
 
-                // Admin menüpont dinamikus hozzáadása
+                // Admin hozzáadása
                 if (isset($_SESSION['felh_ID']) && $_SESSION['jogosultsag'] === 'admin') {
-                    echo '<li class="nav-item"><a class="nav-link" href="adminProjections.php">Admin</a></li>';
+                    echo '<li class="dropdown"><a href="adminProjections.php">Admin></a><i class="bi bi-chevron-down toggle-dropdown"></li>';
                 }
                 ?>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle d-xl-none bi bi-list"></button>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
     </div>

@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 07. 17:38
+-- Gép: localhost
+-- Létrehozás ideje: 2024. Dec 07. 19:42
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -144,7 +144,7 @@ INSERT INTO `megye` (`id`, `nev`, `regio`) VALUES
 CREATE TABLE `menu` (
   `id` int(25) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `menu_id` int(25) NOT NULL,
+  `menu_id` int(25) DEFAULT NULL,
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -153,141 +153,14 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `name`, `menu_id`, `url`) VALUES
-(1, 'Főoldal', 0, 'index.php'),
-(2, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(3, 'SOAP-kliens', 0, 'soapKliens.php'),
-(4, 'SOAP-MNB', 0, 'soapMnb.php'),
-(5, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(7, 'Restful-kliens', 0, 'restfulKliens.php'),
-(8, 'PDF menü', 0, 'pdfMenu.php'),
-(9, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact'),
-(0, 'Főoldal', 0, 'index.php'),
-(0, 'SOAP-szerver', 0, 'soapSzerver.php'),
-(0, 'SOAP-kliens', 0, 'soapKliens.php'),
-(0, 'SOAP-MNB', 0, 'soapMnb.php'),
-(0, 'Restful-szerver', 0, 'restfulSzerver.php'),
-(0, 'Restful-kliens', 0, 'restfulKliens.php'),
-(0, 'PDF menü', 0, 'pdfMenu.php'),
-(0, 'Elérhetőségek', 0, 'footer.php#contact');
+(1, 'Főoldal', NULL, 'index.php'),
+(2, 'SOAP-szerver', NULL, 'soapSzerver.php'),
+(3, 'SOAP-kliens', NULL, 'soapKliens.php'),
+(4, 'SOAP-MNB', NULL, 'soapMnb.php'),
+(5, 'Restful-szerver', NULL, 'restfulSzerver.php'),
+(6, 'Restful-kliens', NULL, 'restfulKliens.php'),
+(7, 'PDF menü', NULL, 'pdfMenu.php'),
+(8, 'Elérhetőségek', NULL, '/common/footer.php#contact');
 
 -- --------------------------------------------------------
 
@@ -377,6 +250,12 @@ ALTER TABLE `megye`
   ADD PRIMARY KEY (`id`);
 
 --
+-- A tábla indexei `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- A tábla indexei `torony`
 --
 ALTER TABLE `torony`
@@ -392,6 +271,12 @@ ALTER TABLE `torony`
 --
 ALTER TABLE `kapcsolat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT a táblához `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT a táblához `torony`
